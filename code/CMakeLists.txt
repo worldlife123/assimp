@@ -263,6 +263,19 @@ ADD_ASSIMP_IMPORTER( B3D
   B3DImporter.h
 )
 
+ADD_ASSIMP_IMPORTER( BF2
+  BF2Importer.cpp
+  BF2Importer.h
+  BF2Mesh.cpp
+  BF2Mesh.h
+  #BF2Col.cpp
+  #BF2Col.h
+  #BF2Ske.cpp
+  #BF2Ske.h
+  #BF2Anim.cpp
+  #BF2Anim.h
+)
+
 ADD_ASSIMP_IMPORTER( BVH
   BVHLoader.cpp
   BVHLoader.h
