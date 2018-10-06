@@ -403,7 +403,10 @@ namespace Assimp {
                         for (int t = 0; t < tmpMat->mapnum; t++)
                         {
                             aiString tex(tmpMat->map[t]);
-                            aiMat->AddProperty(&tex, AI_MATKEY_TEXTURE(aiTextureType_UNKNOWN, t));
+                            //if (t == 0)
+                            //    aiMat->AddProperty(&tex, AI_MATKEY_TEXTURE(aiTextureType_DIFFUSE,0));
+                            //else
+                                aiMat->AddProperty(&tex, AI_MATKEY_TEXTURE(aiTextureType_UNKNOWN, t));
                         }
 
                         //create mesh

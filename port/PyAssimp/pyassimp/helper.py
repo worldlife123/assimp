@@ -20,7 +20,7 @@ import logging;logger = logging.getLogger("pyassimp")
 
 from .errors import AssimpError
 
-additional_dirs, ext_whitelist = [],[]
+additional_dirs, ext_whitelist = ['D:\\Program Files\\Assimp\\bin'],[]
 
 # populate search directories and lists of allowed file extensions
 # depending on the platform we're running on.

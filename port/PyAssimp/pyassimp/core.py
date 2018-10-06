@@ -416,10 +416,11 @@ def _finalize_mesh(mesh, target):
 class PropertyGetter(dict):
     def __getitem__(self, key):
         semantic = 0
+        index = 0
         if isinstance(key, tuple):
-            key, semantic = key
+            key, semantic, index = key
 
-        return dict.__getitem__(self, (key, semantic))
+        return dict.__getitem__(self, (key, semantic, index))
 
     def keys(self):
         for k in dict.keys(self):
@@ -447,7 +448,7 @@ def _get_properties(properties, length):
             uni = unicode(p.mKey.data, errors='ignore')
         except:
             uni = str(p.mKey.data, errors='ignore')
-        key = (str(uni).split('.')[1], p.mSemantic)
+        key = (str(uni).split('.')[1], p.mSemantic, p.mIndex)
 
         #the data
         from ctypes import POINTER, cast, c_int, c_float, sizeof
